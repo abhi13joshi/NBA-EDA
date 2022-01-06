@@ -1,5 +1,3 @@
-setwd("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA")
-
 #Installed libraries
 #install.packages("rvest")
 #install.packages("dplyr")
@@ -12,13 +10,8 @@ setwd("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA")
 #install.packages('ggrepel')
 #install.packages('Hmisc')
 #install.packages("ggthemes")
-#devtools::install_github("abresler/nbastatR", force = TRUE)
 #install.packages("grid")
 #install.packages("png")
-#install.packages("jpeg")
-#install.packages("patchwork")
-
-
 
 #Included libraries
 library('xml2')
@@ -35,8 +28,7 @@ library(ggthemes)
 library(nbastatR)
 library(png)
 library(grid)
-library("jpeg")
-library("patchwork")
+
 
 #NBA Season Stats
 Season_Stats <- "https://www.basketball-reference.com/leagues/NBA_2022_per_game.html"
@@ -617,70 +609,4 @@ Most_Second_Chances <- ggplot(Team_Standings_Offense,
                               "League Average" = "#17408B")) 
 Most_Second_Chances
 #ggsave(filename = 'PS_Vs_2nd_Chance_Opportunities.png', plot = Most_Second_Chances, width=7.5, height=5, units="in", dpi=300)
-
-
-all_nba_players <- 
-  get_nba_players_ids(league = "NBA",
-                      active_only = F)
-
-players_1998 <-
-  get_nba_season_players(
-    year.season_start = 1998,
-    include_only_rostered_players = F,
-    return_message = T
-  )
-brooklyn_nets_2016_roster <- 
-  get_nba_team_season_roster(team = "Brooklyn Nets", year_season_end = 2016)
-
-players_1998_2015 <- get_nba_seasons_players(years = 1998:2014,
-                                             only_on_roster = T,
-                                             message = F)
-
-profiles_2015_season <-
-  get_season_player_profiles(year.season_start = 2014, include_headline_stats = T,
-                             only_rostered_players = T,
-                             message = T)
-
-
-view(all_nba_players)
-
-Sixers_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/76ers.gif")
-Bucks_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Bucks.gif")
-Bulls_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Bulls.gif")
-Cavs_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Cavaliers.gif")
-Celtics_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Celtics.gif")
-Clippers_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Clippers.gif")
-Grizzlies_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Grizzlies.gif")
-Hawks_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Hawks.gif")
-Heat_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Heat.gif")
-Hornets_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Hornets.gif")
-Jazz_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Jazz.gif")
-Kings_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Kings.gif")
-Knicks_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Knicks.gif")
-Lakers_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Lakers.gif")
-Magic_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Magic.gif")
-Mavs_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Mavericks.gif")
-Nets_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Nets.gif")
-Nuggets_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Nuggets.gif")
-Pacers_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Pacers.gif")
-Pelicans_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Pelicans.gif")
-Pistons_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Pistons.gif")
-Raptors_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Raptors.gif")
-Rockets_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Rocketss.gif")
-Spurs_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Spurs.gif")
-Suns_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Suns.gif")
-Thunder_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Thunder.gif")
-Wolves_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Timberwolves.gif")
-Blazers_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/TrailBlazers.gif")
-Warriors_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Warriors.gif")
-Wizards_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/Wizards.gif")
-NBA_Logo <- ("C:/Users/abhi1/OneDrive/Documents/NCSUSAC/NBA/NBATeamLogos/NBA.png")
-
-Logos <- data.frame(Sixers_Logo, Bucks_Logo, Bulls_Logo, Cavs_Logo, Celtics_Logo, 
-              Clippers_Logo, Grizzlies_Logo, Hawks_Logo, Heat_Logo, Hornets_Logo,
-              Jazz_Logo, Kings_Logo, Knicks_Logo, Lakers_Logo, Magic_Logo, Mavs_Logo,
-              Nets_Logo, Nuggets_Logo, Pacers_Logo, Pelicans_Logo, Pistons_Logo, 
-              Raptors_Logo, Rockets_Logo, Spurs_Logo, Suns_Logo, Thunder_Logo, 
-              Wolves_Logo, Blazers_Logo, Warriors_Logo, Wizards_Logo, NBA_Logo)
-view(Logos)
 
