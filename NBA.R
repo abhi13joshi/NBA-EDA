@@ -25,9 +25,7 @@ library(sqldf)
 library(ggrepel)
 library(Hmisc)
 library(ggthemes)
-library(nbastatR)
 library(png)
-library(grid)
 
 
 #NBA Season Stats
