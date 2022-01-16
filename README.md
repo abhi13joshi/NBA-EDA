@@ -1,6 +1,6 @@
 # NBA-EDA
 
-Exploratory Data Analysis of NBA data via basketball reference.
+Exploratory Data Analysis of NBA data for the 2021-2022 NBA season via basketball reference.
 
 <img src="./Player_Age_Distribution .png">
 
