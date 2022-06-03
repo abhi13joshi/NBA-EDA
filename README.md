@@ -8,6 +8,8 @@ Exploratory Data Analysis of NBA data for the 2021-2022 NBA season via basketbal
 
 <img src="Top_Scorers_2022_Season.png">
 
+<img src="Top_Defenses_2022_Season.png">
+
 <img src="Three_Point_Distribution_2022_Season.png">
 
 <img src="NBA_3Point_Shooting_Leaders_2022_Season.png">
